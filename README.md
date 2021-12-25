@@ -39,7 +39,7 @@ Could not find an `alpine`` version of https://hub.docker.com/r/arm64v8/eclipse-
 
     git clone https://github.com/adoptium/temurin-build.git
     cd temurin-build
-    ./makejdk-any-platform.sh -J /usr/lib/jvm/java-10-openjdk --build-variant hotspot --configure-args --disable-warnings-as-errors --tag jdk-11.0.13+8_adopt --branch release jdk11u
+    ./makejdk-any-platform.sh -J /usr/lib/jvm/java-10-openjdk --build-variant hotspot --configure-args --disable-warnings-as-errors --tag jdk-11.0.13+8_adopt --branch release --create-jre-image jdk11u
     ```
 
 1. Clone this repository
@@ -49,11 +49,11 @@ Could not find an `alpine`` version of https://hub.docker.com/r/arm64v8/eclipse-
     cd docker-jre11_alpine_arm64v8
     ```
 
-1. Once completed keep the container running and issue the following command to extract `OpenJDK-jdk.tar.gz`
+1. Once completed keep the container running and issue the following command to extract `OpenJDK-jre.tar.gz`
 
    ```bash
    CID=`docker ps | grep alpine | awk '{print $1}'`
-   docker cp $CID:/temurin-build/workspace/target/OpenJDK-jdk.tar.gz .
+   docker cp $CID:/temurin-build/workspace/target/OpenJDK-jre.tar.gz .
    ```
 
 1. Build Image
