@@ -59,5 +59,5 @@ Could not find an `alpine`` version of https://hub.docker.com/r/arm64v8/eclipse-
 1. Build Image
 
    ```bash
-   docker build . -t jre:11.0.13_8-alpine-slim
+   docker build . -t arm64v8/eclipse-temurin:11.0.13_8-jre-alpine
    ```
